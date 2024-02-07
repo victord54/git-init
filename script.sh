@@ -26,9 +26,13 @@ response=${response:-y}
 if [[ $response =~ ^[Yy]$ ]]; then
     mkdir .vscode
     cat << EOF > .vscode/settings.json
-{
+{   
     "editor.tabSize": 4,
-    "editor.detectIndentation": false
+	"editor.insertSpaces": true,
+	"editor.detectIndentation": false,
+	"files.trimTrailingWhitespace": true,
+	"files.insertFinalNewline": true,
+	"files.eol": "\n",
 }
 EOF
 echo "vscode config folder created !"
